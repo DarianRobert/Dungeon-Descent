@@ -74,6 +74,10 @@ For a Debug build, configure the Debug | x64 settings separately and use the mat
 - Tracked build outputs and a bundled SFML distribution make the repository larger than a source-only checkout. The supplied `x64/Release/` files are historical build artefacts, not a verified fresh release.
 - A clean Windows build and a packaged release have not yet been verified on a fresh development environment.
 
+## My contribution
+
+I contributed to developing Dungeon Descent as part of the university project team. This repository presents the group's game implementation and retains the full author list below.
+
 ## Authors
 
 Lokadi Naicker  
