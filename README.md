@@ -94,3 +94,16 @@ This portfolio fork preserves the [original team repository](https://github.com/
 
 [My project portfolio](https://darianrobert.github.io/)
 
+
+## Native core regression checks
+
+The Windows Forms interface still requires the Visual Studio setup above. The character, combat and room logic can be checked separately with a C++20 compiler:
+
+```bash
+g++ -std=c++20 -I. tests/core_tests.cpp Character.cpp RoomBase.cpp Battle.cpp Monster.cpp Warrior.cpp Mage.cpp Ranger.cpp Rogue.cpp Shop.cpp Library.cpp -o core-tests
+./core-tests
+```
+
+The checks cover starting stats, independent stats snapshots, rounding, damage, class abilities, combat and deletion through base classes. Unsupported shop/library selections return empty results rather than falling through a non-void function. The shop's leading-space response marker is retained because the game screen uses it to load text.
+
+The native checks do not exercise Windows Forms, SFML audio or asset loading. Build and play through each character, room type and biome on Windows before merging the cleanup. SFML include/library paths now resolve from the project directory. `.clang-format` records the formatting style for future edits.
